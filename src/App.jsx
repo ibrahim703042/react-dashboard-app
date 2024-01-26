@@ -1,9 +1,18 @@
+import Dashboard from './components/Dashboard'
+import {BrowSerRouter as Router, Routes, Route} from 'react-router-dom'
+import Template from './components/shared/Template'
+import Products from './components/pages/Products'
 
 function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world K Ibrahim!
-    </h1>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Template/>}>
+          <Route index element={<Dashboard/>}/>
+          <Route path="products" element={<Products/>}/>
+        </Route>
+      </Routes>
+    </Router>
   )
 }
 
